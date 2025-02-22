@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>Hoja de vida dinámica</title>
+    <meta charset="utf-8">
+    <!-- referencia a la hoja de estilo -->
+    <link rel="stylesheet" href="cvcss.css">
+</head>
+
+<body>
+    <h1>Hoja de Vida</h1>
+    <!-- formulario ingresar datos -->
+    <form id="cvForm">
+        <div class="form-group">
+            <label for="nombreInput">Nombre</label>
+            <input type="text" id="nombreInput" required>
+        </div>
+
+        <div class="form-group">
+            <label for="profesionInput">Profesión</label>
+            <input type="text" id="profesionInput" required>
+        </div>
+
+        <div class="form-group">
+            <label for="descripcionInput">Descripción</label>
+            <textarea id="descripcionInput" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="academicoInput">Historial académico</label>
+            <textarea id="academicoInput" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="laboralInput">Historial laboral</label>
+            <textarea id="laboralInput" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="skillsInput">Habilidades</label>
+            <textarea id="skillsInput" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="fotoInput">Foto</label>
+            <input type="file" id="fotoInput" accept="image/*">
+        </div>
+
+        <button type="submit">Actualizar</button>
+        <button type="button" id="deleteCV">Eliminar</button>
+    </form>
+
+    <!-- contenedor donde se mostrará la hoja de vida -->
+    <div id="cvDisplay">
+        <img id="foto" src="" alt="Foto de perfil" style="width: 150px; height: 150px; border-radius: 50%; display: none;">
+        <h2 id="nombre">Tu nombre</h2>
+        <h3 id="profesion">Tu profesión</h3>
+        <p id="descripcion">Breve descripción sobre ti...</p>
+        <h4>Historial Académico</h4>
+        <p id="academico">Información académica...</p>
+        <h4>Historial Laboral</h4>
+        <p id="laboral">Experiencia laboral...</p>
+        <h4>Habilidades</h4>
+        <p id="skills">Lista de habilidades...</p>
+    </div>
+    <!-- referencia al script -->
+    <script src="cvjs.js"></script>
+</body>
+
+</html>
