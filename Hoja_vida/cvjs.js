@@ -9,9 +9,27 @@ document.getElementById("cvForm").addEventListener("submit", function(event) {
     const nombre = document.getElementById("nombreInput").value;
     const profesion = document.getElementById("profesionInput").value;
     const descripcion = document.getElementById("descripcionInput").value;
-    const academico = document.getElementById("academicoInput").value;
-    const laboral = document.getElementById("laboralInput").value;
-    const skills = document.getElementById("skillsInput").value;
+    
+    const academico = [];
+    document.querySelectorAll("#academicoList input").forEach(input => {
+        if (input.value !== "") {
+            academico.push(input.value);
+        }
+    });
+
+    const laboral = [];
+    document.querySelectorAll("#laboralList input").forEach(input => {
+        if (input.value !== "") {
+            laboral.push(input.value);
+        }
+    });
+
+    const skills = [];
+    document.querySelectorAll("#skillsList input").forEach(input => {
+        if (input.value !== "") {
+            skills.push(input.value);
+        }
+    });
 
     // Manejo de la foto:
     const fotoInput = document.getElementById("fotoInput");
@@ -46,11 +64,11 @@ function showCV() {
             <h3>${data.profesion}</h3>
             <p>${data.descripcion}</p>
             <h4>Historial Académico</h4>
-            <p>${data.academico}</p>
+            <p>${data.academico.join("<br>")}</p>
             <h4>Historial Laboral</h4>
-            <p>${data.laboral}</p>
+            <p>${data.laboral.join("<br>")}</p>
             <h4>Habilidades</h4>
-            <p>${data.skills}</p>
+            <p>${data.skills.join("<br>")}</p>
         </div>
     `;
 
@@ -63,3 +81,20 @@ function deleteCV() {
     showCV();
 }
 document.getElementById("deleteCV").addEventListener("click", deleteCV);
+
+function addItem(listId) {
+    const list = document.getElementById(listId);
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "list-item";
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "X";
+    removeBtn.onclick = function () {
+        list.removeChild(input);
+        list.removeChild(removeBtn);
+    };
+
+    list.appendChild(input);
+    list.appendChild(removeBtn);
+}

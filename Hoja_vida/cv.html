@@ -23,22 +23,25 @@
 
         <div class="form-group">
             <label for="descripcionInput">Descripción</label>
-            <textarea id="descripcionInput" required></textarea>
+            <input id="descripcionInput" required>
         </div>
 
         <div class="form-group">
-            <label for="academicoInput">Historial académico</label>
-            <textarea id="academicoInput" required></textarea>
+            <label>Historial académico</label>
+            <div id="academicoList"></div>
+            <button type="button" onclick="addItem('academicoList')">Agregar estudio</button>
+        </div>
+        
+        <div class="form-group">
+            <label>Historial laboral</label>
+            <div id="laboralList"></div>
+            <button type="button" onclick="addItem('laboralList')">Agregar trabajo</button>
         </div>
 
         <div class="form-group">
-            <label for="laboralInput">Historial laboral</label>
-            <textarea id="laboralInput" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="skillsInput">Habilidades</label>
-            <textarea id="skillsInput" required></textarea>
+            <label>Habilidades</label>
+            <div id="skillsList"></div>
+            <button type="button" onclick="addItem('skillsList')">Agregar habilidad</button>
         </div>
 
         <div class="form-group">
