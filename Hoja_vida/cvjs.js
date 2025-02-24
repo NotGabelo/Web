@@ -3,7 +3,7 @@ let cvData = [];
 
 // Agregar datos del formulario al array:
 document.getElementById("cvForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evitar envío del formulario de forma automática
+    event.preventDefault();
 
     // Obtener valores del formulario:
     const nombre = document.getElementById("nombreInput").value;
